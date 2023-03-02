@@ -1,0 +1,11 @@
+FileVersion = 1
+Dependencies = {corlib = "*", corlib = "*"}
+
+[Project]
+Name = "lz4-beef"
+TargetType = "BeefLib"
+StartupObject = "lz4_beef.Program"
+
+[Configs.Debug.Win64]
+LibPaths = ["$(ProjectDir)/dist/windows-x64/lib/liblz4_static.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/windows-x64/dll/*.dll\")"]
